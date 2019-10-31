@@ -18,7 +18,7 @@ opts := &sqlxadapter.AdapterOptions{
     // DB: myDBConn,
 }
 
-a := NewAdapterFromOptions(opts)
+a := sqlxadapter.NewAdapterFromOptions(opts)
 // Casbin v2 may return an error
 e, err := casbin.NewEnforcer("examples/rbac_model.conf", a)
 if err != nil {
