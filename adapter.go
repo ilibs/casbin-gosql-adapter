@@ -87,14 +87,14 @@ func savePolicyLine(ptype string, rule []string) CasbinRule {
 }
 
 func (a *Adapter) dropTable() {
-	_, err := a.db.Exec(fmt.Sprintf("DELETE FROM `%s`", a.tableName))
+	_, err := a.db.Exec(fmt.Sprintf("DROP TABLE `%s`", a.tableName))
 	if err != nil {
 		panic(err)
 	}
 }
 
 func (a *Adapter) ensureTable() {
-	_, err := a.db.Exec(fmt.Sprintf("SELECT 1 FROM `%s` LIMIT 1", a.tableName))
+	err := a.db.Ping()
 	if err != nil {
 		panic(err)
 	}
