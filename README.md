@@ -5,12 +5,12 @@ Based on [sqlx](https://github.com/jmoiron/sqlx), and tested in [MySQL](https://
 
 ## Installation
 
-    go get github.com/memwey/casbin-sqlx-adapter
+    go get github.com/ilibs/casbin-gosql-adapter
 
 ## Usage example
 
 ```go
-opts := &AdapterOptions{
+opts := &sqlxadapter.AdapterOptions{
     DriverName: "mysql",
     DataSourceName: "root:1234@tcp(127.0.0.1:3306)/yourdb",
     TableName: "casbin_rule",
